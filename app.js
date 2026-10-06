@@ -717,3 +717,28 @@ document.getElementById("btn-decompress").addEventListener("click", async () => 
     zipResult.textContent = "Error: " + e.message;
   }
 });
+// ---------- MOBILE BUTTON LISTENERS ----------
+const KEYS_MAP = {
+  "btn-up": { x: 0, y: -1 },
+  "btn-down": { x: 0, y: 1 },
+  "btn-left": { x: -1, y: 0 },
+  "btn-right": { x: 1, y: 0 },
+};
+
+["btn-up", "btn-down", "btn-left", "btn-right"].forEach((id) => {
+  const btn = document.getElementById(id);
+  if (btn) {
+    btn.addEventListener("click", () => {
+      btn.blur();
+      const dir = KEYS_MAP[id];
+      if (!dir || !running) return;
+
+      const isReverse = dir.x === -lastQueued.x && dir.y === -lastQueued.y;
+      const isSame = dir.x === lastQueued.x && dir.y === lastQueued.y;
+      if (isReverse || isSame || inputQueue.size() >= 3) return;
+
+      inputQueue.enqueue(dir);
+      lastQueued = dir;
+    });
+  }
+});

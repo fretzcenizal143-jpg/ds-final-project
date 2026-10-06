@@ -185,3 +185,38 @@ input[type="file"]::file-selector-button {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+/* Mobile Controls D-Pad */
+.mobile-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.horizontal-controls {
+  display: flex;
+  gap: 64px;
+}
+
+.d-btn {
+  width: 60px;
+  height: 60px;
+  font-size: 1.4rem;
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.d-btn:active {
+  background: var(--accent);
+  color: var(--on-accent);
+  transform: scale(0.95);
+}

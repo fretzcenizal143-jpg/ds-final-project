@@ -14,25 +14,36 @@
   </div>
 
   <section id="snake-section">
-  <h2>Snake Game</h2>
-  <p>Score: <span id="score">0</span> | High Score: <span id="high-score">0</span></p>
-  <canvas id="snake-canvas" width="400" height="400"></canvas>
-  <p>
-    <button id="btn-start">Start / Restart</button>
-    <button id="btn-pause">Pause</button>
-  </p>
-  <p>Controls: Arrow keys or WASD. Space to pause.</p>
-</section>
+    <h2>Snake Game</h2>
+    <p>Score: <span id="score">0</span> | High Score: <span id="high-score">0</span></p>
+    <canvas id="snake-canvas" width="400" height="400"></canvas>
+    <p>
+      <button id="btn-start">Start / Restart</button>
+      <button id="btn-pause">Pause</button>
+    </p>
+    <p>Controls: Arrow keys or WASD. Space to pause.</p>
+
+    <!-- Mobile D-Pad Controls -->
+    <div class="mobile-controls">
+      <button id="btn-up" class="d-btn">▲</button>
+      <div class="horizontal-controls">
+        <button id="btn-left" class="d-btn">◀</button>
+        <button id="btn-right" class="d-btn">▶</button>
+      </div>
+      <button id="btn-down" class="d-btn">▼</button>
+    </div>
+  </section>
+
   <section id="zipper-section" class="hidden">
-  <h2>File Zipper (Huffman Coding)</h2>
-  <p><input type="file" id="zip-file"></p>
-  <p>
-    <button id="btn-compress">Compress</button>
-    <button id="btn-decompress">Decompress</button>
-  </p>
-  <p id="zip-download"></p>
-  <pre id="zip-result">Choose a file, then click Compress or Decompress.</pre>
-</section>
+    <h2>File Zipper (Huffman Coding)</h2>
+    <p><input type="file" id="zip-file"></p>
+    <p>
+      <button id="btn-compress">Compress</button>
+      <button id="btn-decompress">Decompress</button>
+    </p>
+    <p id="zip-download"></p>
+    <pre id="zip-result">Choose a file, then click Compress or Decompress.</pre>
+  </section>
 
   <script src="app.js"></script>
 </body>
